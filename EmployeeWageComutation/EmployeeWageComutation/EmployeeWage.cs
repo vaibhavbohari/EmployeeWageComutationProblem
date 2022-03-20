@@ -6,7 +6,7 @@ using System.Text;
 
 namespace EmployeeWageComputation
 {
-    class WageComputation
+    class EmployeeWage
     {
         const int fullTime = 1,
                   partTime = 2,
@@ -19,27 +19,26 @@ namespace EmployeeWageComputation
             Random random = new Random();
 
             int empCheck = random.Next(0, 3);
-            
-            if (empCheck == fullTime)
+            int empWage = 0;
+            switch (empCheck)
             {
-                Console.WriteLine("Employee is present fullTime");
-                int dailyEmpWage = fullTimeHrs  * ratePerHr ;
-                Console.WriteLine("EmpWage:" +dailyEmpWage);
-            }
-            else if (empCheck == partTime)
-            {
-                Console.WriteLine("Employee is present partTime");
-                int dailyEmpWage = partTimeHr * ratePerHr;
-                Console.WriteLine("EmpWage:"+ dailyEmpWage);
+                case fullTime:
+                    Console.WriteLine("Employee is Present fullTime");
+                    empWage = ratePerHr * fullTimeHrs;
+                    break;
 
+                case partTime:
+                    Console.WriteLine("Employee is Present partTime");
+                    empWage = ratePerHr * partTimeHr;
+                    break;
+               
+                default :
+                    Console.WriteLine("Employee is Absent");
+                    break;
             }
-            else
-            {
-                Console.WriteLine("Employee is absent");
-            }
-            
-        }
+            Console.WriteLine("Employee Wage :" + empWage);
+        }    
 
     }
 }
-
+    

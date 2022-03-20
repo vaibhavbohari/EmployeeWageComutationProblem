@@ -6,7 +6,7 @@ namespace EmployeeWageComputation
     {
         static void Main(string[] args)
         {
-            WageComputation wagecomputation = new WageComputation();
+            EmployeeWage  wagecomputation = new EmployeeWage ();
             wagecomputation.CalculateEmpWage();
         }
     }
