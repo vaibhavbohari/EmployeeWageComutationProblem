@@ -13,7 +13,8 @@ namespace EmployeeWageComputation
                    absent = 0,
                    ratePerHr = 20,
                    fullTimeHrs = 8,
-                   partTimeHr = 4;
+                   partTimeHr = 4,
+                   perMonthDays = 20;
         public void CalculateEmpWage()
         {
             Random random = new Random();
@@ -24,19 +25,19 @@ namespace EmployeeWageComputation
             {
                 case fullTime:
                     Console.WriteLine("Employee is Present fullTime");
-                    empWage = ratePerHr * fullTimeHrs;
+                    empWage =perMonthDays *( ratePerHr * fullTimeHrs);
                     break;
 
                 case partTime:
                     Console.WriteLine("Employee is Present partTime");
-                    empWage = ratePerHr * partTimeHr;
+                    empWage = perMonthDays *(ratePerHr * partTimeHr);
                     break;
                
                 default :
                     Console.WriteLine("Employee is Absent");
                     break;
             }
-            Console.WriteLine("Employee Wage :" + empWage);
+            Console.WriteLine("Employee Wage Per Month :" + empWage);
         }    
 
     }
