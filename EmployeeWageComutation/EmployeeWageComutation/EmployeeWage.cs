@@ -8,23 +8,32 @@ namespace EmployeeWageComputation
 {
     class WageComputation
     {
-        const int present = 1,
+        const int fullTime = 1,
+                  partTime = 2,
                    absent = 0,
-                   ratePerHr = 20, 
-                   empWorkingHrs = 8;
+                   ratePerHr = 20,
+                   fullTimeHrs = 8,
+                   partTimeHr = 4;
         public void CalculateEmpWage()
         {
             Random random = new Random();
 
-            int empCheck = random.Next(0, 2);
+            int empCheck = random.Next(0, 3);
             
-            if (empCheck == present)
+            if (empCheck == fullTime)
             {
-                Console.WriteLine("Employee is present");
-                int dailyEmpWage = empWorkingHrs  * ratePerHr ;
-                Console.WriteLine("dailyEmpWage:" +dailyEmpWage);
+                Console.WriteLine("Employee is present fullTime");
+                int dailyEmpWage = fullTimeHrs  * ratePerHr ;
+                Console.WriteLine("EmpWage:" +dailyEmpWage);
             }
-            else 
+            else if (empCheck == partTime)
+            {
+                Console.WriteLine("Employee is present partTime");
+                int dailyEmpWage = partTimeHr * ratePerHr;
+                Console.WriteLine("EmpWage:"+ dailyEmpWage);
+
+            }
+            else
             {
                 Console.WriteLine("Employee is absent");
             }
