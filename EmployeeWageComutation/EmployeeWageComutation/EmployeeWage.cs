@@ -1,30 +1,36 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-
-    internal class EmployeeWage
+namespace EmployeeWageComputation
+{
+    class WageComputation
     {
-        public void StartWageCal()
-        { 
+        const int present = 1,
+                   absent = 0,
+                   ratePerHr = 20, 
+                   empWorkingHrs = 8;
+        public void CalculateEmpWage()
+        {
             Random random = new Random();
-            const int present = 1;
-            const int absent = 0;
 
-
-            int ispresent = random.Next(2);
-
-            if (ispresent == present)
+            int empCheck = random.Next(0, 2);
+            
+            if (empCheck == present)
             {
-                Console.WriteLine(" Employee is Present ");
-
+                Console.WriteLine("Employee is present");
+                int dailyEmpWage = empWorkingHrs  * ratePerHr ;
+                Console.WriteLine("dailyEmpWage:" +dailyEmpWage);
             }
-            else
+            else 
             {
-                Console.WriteLine(" Employee is Absent");
+                Console.WriteLine("Employee is absent");
             }
+            
         }
+
     }
+}
 
